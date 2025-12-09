@@ -1,0 +1,106 @@
+openapi: 3.0.4
+info:
+  title: Game Character Generator
+  description: Generate complete RPG-style characters with race, class, background, stats, and personality.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/gamecharacter:
+    get:
+      summary: Generate Character
+      description: Generate complete RPG-style characters with race, class, background, stats, and personality.
+      operationId: gamecharacter
+      parameters:
+      - name: race
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Character race: Human, Elf, Dwarf, Halfling, Orc, Gnome, Tiefling, Dragonborn, Half-Elf, Goblin'
+        example: elf
+      - name: class
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Character class: Warrior, Mage, Rogue, Cleric, Ranger, Paladin, Barbarian, Bard, Druid, Monk, Warlock, Necromancer'
+        example: mage
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  name: Nimara Shadowleaf
+                  race:
+                    name: Elf
+                    traits:
+                    - Graceful
+                    - Keen Senses
+                    - Long-lived
+                  class:
+                    name: Mage
+                    description: Wielder of arcane magic
+                    primaryStat: intelligence
+                    hitDie: d6
+                  background: Acolyte
+                  personality: Reckless and impulsive
+                  motivation: Escape their past
+                  stats:
+                    strength:
+                      value: 11
+                      modifier: 0
+                    dexterity:
+                      value: 11
+                      modifier: 0
+                    constitution:
+                      value: 7
+                      modifier: -2
+                    intelligence:
+                      value: 11
+                      modifier: 0
+                    wisdom:
+                      value: 11
+                      modifier: 0
+                    charisma:
+                      value: 11
+                      modifier: 0
+                  hp: 4
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
