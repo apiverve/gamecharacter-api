@@ -17,14 +17,11 @@ def call_gamecharacter_api():
     Make a GET request to the Game Character Generator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;race&#x27;: &#x27;elf&#x27;, &#x27;class&#x27;: &#x27;mage&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
