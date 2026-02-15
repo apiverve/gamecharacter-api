@@ -12,14 +12,12 @@ namespace APIVerve.API.GameCharacterGenerator
     {
         /// <summary>
         /// Character race: Human, Elf, Dwarf, Halfling, Orc, Gnome, Tiefling, Dragonborn, Half-Elf, Goblin
-        /// Example: elf
         /// </summary>
         [JsonProperty("race")]
         public string Race { get; set; }
 
         /// <summary>
         /// Character class: Warrior, Mage, Rogue, Cleric, Ranger, Paladin, Barbarian, Bard, Druid, Monk, Warlock, Necromancer
-        /// Example: mage
         /// </summary>
         [JsonProperty("class")]
         public string Class { get; set; }
