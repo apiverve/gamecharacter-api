@@ -10,20 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_gamecharactergenerator',
-    version='1.1.12',
+    version='1.1.13',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     description='Generate complete RPG-style characters with race, class, background, stats, and personality.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com',
-    project_urls={
-        'Homepage': 'https://apiverve.com',
-        'Documentation': 'https://docs.apiverve.com/ref/gamecharacter',
-        'Source': 'https://github.com/apiverve/gamecharacter-api',
-        'Bug Tracker': 'https://github.com/apiverve/gamecharacter-api/issues'
-    },
+    url='https://apiverve.com/marketplace/gamecharacter?utm_source=pypi&utm_medium=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
