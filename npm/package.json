@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/gamecharacter",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Generate complete RPG-style characters with race, class, background, stats, and personality.",
   "main": "index.js",
   "types": "index.d.ts",
