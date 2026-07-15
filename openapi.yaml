@@ -96,6 +96,9 @@ paths:
                       value: 8
                       modifier: -1
                   hp: 5
+                  totalStatPoints: 57
+                  highestStat: strength
+                  lowestStat: wisdom
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
