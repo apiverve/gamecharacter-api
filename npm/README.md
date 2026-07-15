@@ -125,7 +125,7 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "name": "Nimara Shadowleaf",
+    "name": "Nimara Goldenbough",
     "race": {
       "name": "Elf",
       "traits": [
@@ -140,36 +140,39 @@ async function makeRequest() {
       "primaryStat": "intelligence",
       "hitDie": "d6"
     },
-    "background": "Acolyte",
-    "personality": "Reckless and impulsive",
-    "motivation": "Escape their past",
+    "background": "Criminal",
+    "personality": "Ambitious and driven",
+    "motivation": "Protect the innocent",
     "stats": {
       "strength": {
-        "value": 11,
-        "modifier": 0
+        "value": 13,
+        "modifier": 1
       },
       "dexterity": {
-        "value": 11,
-        "modifier": 0
+        "value": 12,
+        "modifier": 1
       },
       "constitution": {
-        "value": 7,
-        "modifier": -2
+        "value": 9,
+        "modifier": -1
       },
       "intelligence": {
         "value": 11,
         "modifier": 0
       },
       "wisdom": {
-        "value": 11,
-        "modifier": 0
+        "value": 4,
+        "modifier": -3
       },
       "charisma": {
-        "value": 11,
-        "modifier": 0
+        "value": 8,
+        "modifier": -1
       }
     },
-    "hp": 4
+    "hp": 5,
+    "totalStatPoints": 57,
+    "highestStat": "strength",
+    "lowestStat": "wisdom"
   }
 }
 ```
