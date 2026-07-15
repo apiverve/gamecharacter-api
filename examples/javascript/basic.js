@@ -13,7 +13,13 @@ const API_URL = 'https://api.apiverve.com/v1/gamecharacter';
  */
 async function callGameCharacterGeneratorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            race: &#x27;elf&#x27;,
+            class: &#x27;mage&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
