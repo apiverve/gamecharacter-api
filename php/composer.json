@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/gamecharacter",
+    "description": "Generate complete RPG-style characters with race, class, background, stats, and personality.",
+    "version": "1.2.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "gamecharacter",
+        "rpg character",
+        "character generator",
+        "dnd",
+        "fantasy character",
+        "game character"
+    ],
+    "homepage": "https://apiverve.com/marketplace/gamecharacter?utm_source=php&utm_medium=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/gamecharacter",
+        "source": "https://github.com/apiverve/gamecharacter-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Gamecharacter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Gamecharacter\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
