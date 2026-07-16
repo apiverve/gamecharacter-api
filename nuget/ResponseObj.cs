@@ -25,6 +25,9 @@ namespace APIVerve.API.GameCharacterGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -51,7 +54,16 @@ namespace APIVerve.API.GameCharacterGenerator
         public Stats Stats { get; set; }
 
         [JsonProperty("hp")]
-        public long Hp { get; set; }
+        public long? Hp { get; set; }
+
+        [JsonProperty("totalStatPoints")]
+        public long? TotalStatPoints { get; set; }
+
+        [JsonProperty("highestStat")]
+        public string HighestStat { get; set; }
+
+        [JsonProperty("lowestStat")]
+        public string LowestStat { get; set; }
     }
 
     public partial class Class
@@ -102,9 +114,21 @@ namespace APIVerve.API.GameCharacterGenerator
     public partial class Charisma
     {
         [JsonProperty("value")]
-        public long Value { get; set; }
+        public long? Value { get; set; }
 
         [JsonProperty("modifier")]
-        public long Modifier { get; set; }
+        public long? Modifier { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
