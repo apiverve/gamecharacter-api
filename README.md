@@ -192,11 +192,75 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Game Character Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "name": "Nimara Goldenbough",
+    "race": {
+      "name": "Elf",
+      "traits": [
+        "Graceful",
+        "Keen Senses",
+        "Long-lived"
+      ]
+    },
+    "class": {
+      "name": "Mage",
+      "description": "Wielder of arcane magic",
+      "primaryStat": "intelligence",
+      "hitDie": "d6"
+    },
+    "background": "Criminal",
+    "personality": "Ambitious and driven",
+    "motivation": "Protect the innocent",
+    "stats": {
+      "strength": {
+        "value": 13,
+        "modifier": 1
+      },
+      "dexterity": {
+        "value": 12,
+        "modifier": 1
+      },
+      "constitution": {
+        "value": 9,
+        "modifier": -1
+      },
+      "intelligence": {
+        "value": 11,
+        "modifier": 0
+      },
+      "wisdom": {
+        "value": 4,
+        "modifier": -3
+      },
+      "charisma": {
+        "value": 8,
+        "modifier": -1
+      }
+    },
+    "hp": 5,
+    "totalStatPoints": 57,
+    "highestStat": "strength",
+    "lowestStat": "wisdom"
+  }
 }
 ```
 
