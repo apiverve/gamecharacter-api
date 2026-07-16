@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.GameCharacterGenerator;
 
 class Program
 {
@@ -60,9 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+        var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
         // Make the API call
@@ -117,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GameCharacterGenerator;
 
 public class Example
 {
@@ -125,9 +125,9 @@ public class Example
     {
         var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+        var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.GameCharacterGenerator;
 
 public class Example
 {
@@ -158,9 +158,9 @@ public class Example
     {
         var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+        var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GameCharacterGenerator;
 
 public class Example
 {
@@ -196,9 +196,9 @@ public class Example
     {
         var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+        var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
         try
@@ -241,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GameCharacterGenerator;
 
 public class Example
 {
@@ -253,9 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+        var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
         try
@@ -295,9 +295,9 @@ var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +341,9 @@ var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    race = "elf",
-    class = "mage"
+var queryOptions = new GameCharacterGeneratorQueryOptions {
+    Race = "elf",
+    Class = "mage"
 };
 
 using (var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -376,7 +376,7 @@ using (var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "name": "Nimara Shadowleaf",
+    "name": "Nimara Goldenbough",
     "race": {
       "name": "Elf",
       "traits": [
@@ -391,36 +391,39 @@ using (var apiClient = new GameCharacterGeneratorAPIClient("[YOUR_API_KEY]"))
       "primaryStat": "intelligence",
       "hitDie": "d6"
     },
-    "background": "Acolyte",
-    "personality": "Reckless and impulsive",
-    "motivation": "Escape their past",
+    "background": "Criminal",
+    "personality": "Ambitious and driven",
+    "motivation": "Protect the innocent",
     "stats": {
       "strength": {
-        "value": 11,
-        "modifier": 0
+        "value": 13,
+        "modifier": 1
       },
       "dexterity": {
-        "value": 11,
-        "modifier": 0
+        "value": 12,
+        "modifier": 1
       },
       "constitution": {
-        "value": 7,
-        "modifier": -2
+        "value": 9,
+        "modifier": -1
       },
       "intelligence": {
         "value": 11,
         "modifier": 0
       },
       "wisdom": {
-        "value": 11,
-        "modifier": 0
+        "value": 4,
+        "modifier": -3
       },
       "charisma": {
-        "value": 11,
-        "modifier": 0
+        "value": 8,
+        "modifier": -1
       }
     },
-    "hp": 4
+    "hp": 5,
+    "totalStatPoints": 57,
+    "highestStat": "strength",
+    "lowestStat": "wisdom"
   }
 }
 ```
