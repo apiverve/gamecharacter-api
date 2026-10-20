@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/gamecharacter:
     get:
-      summary: Generate Character
+      summary: Game Character Generator
       description: Generate a random RPG character
       operationId: gamecharacter
       parameters:
