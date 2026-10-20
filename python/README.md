@@ -3,11 +3,10 @@ Game Character Generator API
 
 Generate complete RPG-style characters with race, class, background, stats, and personality.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-gamecharactergenerator.svg)](https://pypi.org/project/apiverve-gamecharactergenerator/)
+
+This is a Python wrapper for the [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-gamecharactergenerator
 
 ## Configuration
 
-Before using the gamecharacter API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Game Character Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Game Character Generator API documentation is found here: [https://docs.apiverve.com/ref/gamecharacter](https://docs.apiverve.com/ref/gamecharacter?utm_source=pypi&utm_medium=readme).
+The Game Character Generator API documentation is found here: [https://docs.apiverve.com/ref/gamecharacter](https://docs.apiverve.com/ref/gamecharacter?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -108,7 +107,7 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "name": "Nimara Shadowleaf",
+    "name": "Nimara Goldenbough",
     "race": {
       "name": "Elf",
       "traits": [
@@ -123,36 +122,39 @@ print(result)
       "primaryStat": "intelligence",
       "hitDie": "d6"
     },
-    "background": "Acolyte",
-    "personality": "Reckless and impulsive",
-    "motivation": "Escape their past",
+    "background": "Criminal",
+    "personality": "Ambitious and driven",
+    "motivation": "Protect the innocent",
     "stats": {
       "strength": {
-        "value": 11,
-        "modifier": 0
+        "value": 13,
+        "modifier": 1
       },
       "dexterity": {
-        "value": 11,
-        "modifier": 0
+        "value": 12,
+        "modifier": 1
       },
       "constitution": {
-        "value": 7,
-        "modifier": -2
+        "value": 9,
+        "modifier": -1
       },
       "intelligence": {
         "value": 11,
         "modifier": 0
       },
       "wisdom": {
-        "value": 11,
-        "modifier": 0
+        "value": 4,
+        "modifier": -3
       },
       "charisma": {
-        "value": 11,
-        "modifier": 0
+        "value": 8,
+        "modifier": -1
       }
     },
-    "hp": 4
+    "hp": 5,
+    "totalStatPoints": 57,
+    "highestStat": "strength",
+    "lowestStat": "wisdom"
   }
 }
 ```
@@ -295,7 +297,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -306,12 +308,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

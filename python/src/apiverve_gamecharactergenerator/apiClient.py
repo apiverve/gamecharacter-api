@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,8 +24,8 @@ class ValidationError(GamecharacterAPIClientError):
 class GamecharacterAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "race": {"type": "string", "required": False},
-        "class": {"type": "string", "required": False}
+        "race": {"type": "string", "required": False, "maxLength": 40},
+        "class": {"type": "string", "required": False, "maxLength": 40}
     }
 
     # Format validation patterns
