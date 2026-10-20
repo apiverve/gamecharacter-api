@@ -67,8 +67,8 @@ namespace APIVerve.API.GameCharacterGenerator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "race", new ValidationRule { Type = "string", Required = false } },
-            { "class", new ValidationRule { Type = "string", Required = false } }
+            { "race", new ValidationRule { Type = "string", Required = false, MaxLength = 40 } },
+            { "class", new ValidationRule { Type = "string", Required = false, MaxLength = 40 } }
         };
 
         /// <summary>Format validation patterns</summary>
