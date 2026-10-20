@@ -30,7 +30,7 @@ class gamecharacterWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/gamecharacter';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"race":{"type":"string","required":false},"class":{"type":"string","required":false}};
+        this.validationRules = {"race":{"type":"string","required":false,"maxLength":40},"class":{"type":"string","required":false,"maxLength":40}};
     }
 
     /**
