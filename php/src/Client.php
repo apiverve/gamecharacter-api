@@ -19,7 +19,7 @@ use APIVerve\Gamecharacter\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://apiverve.com/marketplace/gamecharacter?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/gamecharacter?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
@@ -34,8 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'race' => ['type' => 'string', 'required' => false],
-        'class' => ['type' => 'string', 'required' => false]
+        'race' => ['type' => 'string', 'required' => false, 'maxLength' => 40],
+        'class' => ['type' => 'string', 'required' => false, 'maxLength' => 40]
     ];
 
     /**
