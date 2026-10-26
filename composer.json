@@ -1,7 +1,7 @@
 {
     "name": "apiverve/gamecharacter",
     "description": "Generate complete RPG-style characters with race, class, background, stats, and personality.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
