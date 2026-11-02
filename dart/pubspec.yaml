@@ -1,7 +1,7 @@
 name: apiverve_gamecharacter
-description: Generate complete RPG-style characters with race, class, background, stats, and personality.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=homepage
+description: "Generate complete RPG-style characters with race, class, background, stats, and personality."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/gamecharacter-api/tree/main/dart
 
 environment:

@@ -5,7 +5,7 @@ Generate complete RPG-style characters with race, class, background, stats, and 
 [![pub package](https://img.shields.io/pub/v/apiverve_gamecharacter.svg)](https://pub.dev/packages/apiverve_gamecharacter)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_gamecharacter: ^1.1.14
+  apiverve_gamecharacter: ^1.2.4
 ```
 
 Then run:
@@ -53,7 +53,7 @@ void main() async {
   "status": "ok",
   "error": null,
   "data": {
-    "name": "Nimara Shadowleaf",
+    "name": "Nimara Goldenbough",
     "race": {
       "name": "Elf",
       "traits": [
@@ -68,48 +68,51 @@ void main() async {
       "primaryStat": "intelligence",
       "hitDie": "d6"
     },
-    "background": "Acolyte",
-    "personality": "Reckless and impulsive",
-    "motivation": "Escape their past",
+    "background": "Criminal",
+    "personality": "Ambitious and driven",
+    "motivation": "Protect the innocent",
     "stats": {
       "strength": {
-        "value": 11,
-        "modifier": 0
+        "value": 13,
+        "modifier": 1
       },
       "dexterity": {
-        "value": 11,
-        "modifier": 0
+        "value": 12,
+        "modifier": 1
       },
       "constitution": {
-        "value": 7,
-        "modifier": -2
+        "value": 9,
+        "modifier": -1
       },
       "intelligence": {
         "value": 11,
         "modifier": 0
       },
       "wisdom": {
-        "value": 11,
-        "modifier": 0
+        "value": 4,
+        "modifier": -3
       },
       "charisma": {
-        "value": 11,
-        "modifier": 0
+        "value": 8,
+        "modifier": -1
       }
     },
-    "hp": 4
+    "hp": 5,
+    "totalStatPoints": 57,
+    "highestStat": "strength",
+    "lowestStat": "wisdom"
   }
 }
 ```
 
 ## API Reference
 
-- **API Home:** [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/gamecharacter](https://docs.apiverve.com/ref/gamecharacter?utm_source=dart&utm_medium=readme)
+- **API Home:** [Game Character Generator API](https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/gamecharacter](https://docs.apiverve.com/ref/gamecharacter?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -117,4 +120,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

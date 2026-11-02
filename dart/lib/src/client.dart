@@ -46,11 +46,11 @@ final _formatPatterns = {
 
 /// Game Character Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/gamecharacter?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [race] - Character race: Human, Elf, Dwarf, Halfling, Orc, Gnome, Tiefling, Dragonborn, Half-Elf, Goblin
-/// * [class] - Character class: Warrior, Mage, Rogue, Cleric, Ranger, Paladin, Barbarian, Bard, Druid, Monk, Warlock, Necromancer
+/// * [race] - Character race: Human, Elf, Dwarf, Halfling, Orc, Gnome, Tiefling, Dragonborn, Half-Elf, Goblin [maxLength: 40]
+/// * [class] - Character class: Warrior, Mage, Rogue, Cleric, Ranger, Paladin, Barbarian, Bard, Druid, Monk, Warlock, Necromancer [maxLength: 40]
 class GamecharacterClient {
   final String apiKey;
   final String baseUrl;
@@ -58,8 +58,8 @@ class GamecharacterClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'race': ValidationRule(type: 'string', required: false),
-    'class': ValidationRule(type: 'string', required: false),
+    'race': ValidationRule(type: 'string', required: false, maxLength: 40),
+    'class': ValidationRule(type: 'string', required: false, maxLength: 40),
   };
 
   GamecharacterClient(this.apiKey, {

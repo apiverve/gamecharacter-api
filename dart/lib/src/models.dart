@@ -6,22 +6,50 @@ class GamecharacterResponse {
   final dynamic error;
   final GamecharacterData? data;
 
+  /// Set only when the current plan locks one or more fields; null otherwise.
+  final PremiumInfo? premium;
+
   GamecharacterResponse({
     required this.status,
     this.error,
     this.data,
+    this.premium,
   });
 
   factory GamecharacterResponse.fromJson(Map<String, dynamic> json) => GamecharacterResponse(
     status: json['status'] as String? ?? '',
     error: json['error'],
     data: json['data'] != null ? GamecharacterData.fromJson(json['data']) : null,
+    premium: json['premium'] != null ? PremiumInfo.fromJson(json['premium']) : null,
   );
 
   Map<String, dynamic> toJson() => {
     'status': status,
     if (error != null) 'error': error,
     if (data != null) 'data': data,
+    if (premium != null) 'premium': premium!.toJson(),
+  };
+}
+
+/// Describes fields the current plan does not unlock. Locked fields arrive as null
+/// in [data], and [lockedFields] names them (nested ones use dot paths).
+class PremiumInfo {
+  final String? message;
+  final String? upgradeUrl;
+  final List<String>? lockedFields;
+
+  PremiumInfo({this.message, this.upgradeUrl, this.lockedFields});
+
+  factory PremiumInfo.fromJson(Map<String, dynamic> json) => PremiumInfo(
+    message: json['message'] as String?,
+    upgradeUrl: json['upgrade_url'] as String?,
+    lockedFields: (json['locked_fields'] as List?)?.map((e) => e.toString()).toList(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    if (message != null) 'message': message,
+    if (upgradeUrl != null) 'upgrade_url': upgradeUrl,
+    if (lockedFields != null) 'locked_fields': lockedFields,
   };
 }
 
@@ -35,7 +63,10 @@ class GamecharacterData {
   String? personality;
   String? motivation;
   GamecharacterDataStats? stats;
-  int? hp;
+  num? hp;
+  num? totalStatPoints;
+  String? highestStat;
+  String? lowestStat;
 
   GamecharacterData({
     this.name,
@@ -46,6 +77,9 @@ class GamecharacterData {
     this.motivation,
     this.stats,
     this.hp,
+    this.totalStatPoints,
+    this.highestStat,
+    this.lowestStat,
   });
 
   factory GamecharacterData.fromJson(Map<String, dynamic> json) => GamecharacterData(
@@ -57,6 +91,9 @@ class GamecharacterData {
       motivation: json['motivation'],
       stats: json['stats'] != null ? GamecharacterDataStats.fromJson(json['stats']) : null,
       hp: json['hp'],
+      totalStatPoints: json['totalStatPoints'],
+      highestStat: json['highestStat'],
+      lowestStat: json['lowestStat'],
     );
 }
 
@@ -124,8 +161,8 @@ class GamecharacterDataStats {
 }
 
 class GamecharacterDataStatsStrength {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsStrength({
     this.value,
@@ -139,8 +176,8 @@ class GamecharacterDataStatsStrength {
 }
 
 class GamecharacterDataStatsDexterity {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsDexterity({
     this.value,
@@ -154,8 +191,8 @@ class GamecharacterDataStatsDexterity {
 }
 
 class GamecharacterDataStatsConstitution {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsConstitution({
     this.value,
@@ -169,8 +206,8 @@ class GamecharacterDataStatsConstitution {
 }
 
 class GamecharacterDataStatsIntelligence {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsIntelligence({
     this.value,
@@ -184,8 +221,8 @@ class GamecharacterDataStatsIntelligence {
 }
 
 class GamecharacterDataStatsWisdom {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsWisdom({
     this.value,
@@ -199,8 +236,8 @@ class GamecharacterDataStatsWisdom {
 }
 
 class GamecharacterDataStatsCharisma {
-  int? value;
-  int? modifier;
+  num? value;
+  num? modifier;
 
   GamecharacterDataStatsCharisma({
     this.value,
